@@ -328,6 +328,8 @@
                 </div>
             </div>
 
+            
+
             <div class="end">
                 <!-- <label for="" class="lb-end" >QUÉT MÃ QR CODE DƯỚI ĐÂY <br>
                     NẾU BẠN MUỐN GỬI QUÀ MỪNG CƯỚI DÀNH TẶNG CHO <br>
@@ -560,10 +562,34 @@
             Swal.fire({
                 title: "",
                 text: "",
-                imageUrl: "anh/qrcode.jpeg",
-                imageWidth: 300,
+                imageUrl: "anh/DAT_4571.jpg",
+                imageWidth: '100%',
                 imageHeight: "auto",
                 imageAlt: "Custom image",
+                html: `
+                    <div class="qrcode-box">
+                        <div class="item">
+                            <div class="info">
+                                <p>Tên TK: PHAM THI LAN NHI</p>
+                                <p>Số TK: 1903 6726 8180 16</p>
+                                <p>Ngân hàng: TECHCOMBANK</p>
+                            </div>
+                            <div class="qrcode-img">
+                                <img src="anh/qrcode-01.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="info">
+                                <p>Tên TK: TRAN HUY DONG PHUONG</p>
+                                <p>Số TK: 03810 0056 1204</p>
+                                <p>Ngân hàng: VIETCOMBANK</p>
+                            </div>
+                            <div class="qrcode-img">
+                                <img src="anh/qrcode-02.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                `,
                 confirmButtonColor: "#505738"
             });
         }

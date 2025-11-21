@@ -1283,9 +1283,47 @@ textarea::placeholder {
   line-height: 1.6;
 }
 
-.qr-container img {
-  margin-top: 20px;
+.qrcode-box {
+  display: flex;
 }
+
+.qrcode-box .item  {
+  width: 50%;
+  margin-bottom: 6%;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.qrcode-box .item .info {
+  margin-bottom: 2%;
+}
+
+.qrcode-box .item .qrcode-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qrcode-box .item .qrcode-img img {
+  width: 60%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+div:where(.swal2-container) div:where(.swal2-html-container) {
+  padding: 0 !important;;
+}
+
+/* QR code */
+div:where(.swal2-container) img:where(.swal2-image) {
+  margin: 0 auto 1em !important;
+}
+
 
 /* Định nghĩa hoạt ảnh xoay */
 @keyframes spin {
@@ -1430,6 +1468,15 @@ textarea::placeholder {
   .qr-btn {
     font-size: calc((11 / 480) * 100vw);
   }
+
+  .qrcode-box .item  {
+    font-size: calc((13 / 480) * 100vw);
+  }
+
+  div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    font-size: calc((16 / 480) * 100vw);
+  }
+
   .lb-thank  {
     font-size: calc((35 / 480) * 100vw);
   }
