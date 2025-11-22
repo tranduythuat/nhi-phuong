@@ -1286,6 +1286,7 @@ textarea::placeholder {
 
 .qrcode-box {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .qrcode-box .item  {
