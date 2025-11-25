@@ -251,7 +251,7 @@
                 </div>
 
                 <div class="container-check attend-check">
-                    <input class="box-feed" type="radio" value="THAM DỰ TIỆC NHÀ GÁI" id="bride-yes" checked name="CONFIRM">
+                    <input class="box-feed" type="radio" value="Tham dự" id="bride-yes" checked name="CONFIRM">
                     <label class="check-box check-box-yes" for="bride-yes">
                         <h3 class="til-check">SẼ THAM DỰ</h3>
                     </label>
@@ -259,7 +259,7 @@
                     <label class="check-box check-box-yes" for="groom-yes">
                         <h3 class="til-check">SẼ THAM DỰ TIỆC </br> NHÀ TRAI</h3>
                     </label> -->
-                    <input class="box-feed" type="radio" value="KHÔNG THAM DỰ" id="no" name="CONFIRM">
+                    <input class="box-feed" type="radio" value="Không tham dự" id="no" name="CONFIRM">
                     <label class="check-box" for="no">
                         <h3 class="til-check">KHÔNG THAM DỰ</h3>
                     </label>
@@ -281,7 +281,7 @@
                     <input class="inp-ten" type="text" name="DIETARY" placeholder="" />
                 </div> -->
                 <div class="container-check visible dietary-check">
-                    <input class="box-feed" type="radio" value="Tự đi xe" id="khong_an_chay" name="dietary">
+                    <input class="box-feed" type="radio" value="Không" id="khong_an_chay" name="dietary">
                     <label class="check-box" for="khong_an_chay">
                         <h3 class="til-check">Không</h3>
                     </label>
@@ -386,7 +386,7 @@
 
     </script>
     <script>
-        const scripConfirmtURL = '';
+        const scripConfirmtURL = 'https://script.google.com/macros/s/AKfycbx9RXjQ-JPpiFJfQjGah47luDKeX8FT8pI7dBajkX-y4qbYai-QQLFdUpx9cyB9j4M34w/exec?sheet=confirm';
         const form = document.forms['nhi-phuong'];
 
         form.addEventListener('submit', e => {
@@ -399,13 +399,19 @@
             const confirm = data.CONFIRM;
             const name = data.NAME;
             const number_guest = data.GUEST;
-            const movement = data.movement;
+            const dietary = data.dietary;
             const wish = data.WISH;
 
             // Gửi dữ liệu form đi
             fetch(scripConfirmtURL, {
                 method: 'POST',
-                body: new URLSearchParams({ name, confirm, number_guest, movement, wish })
+                body: new URLSearchParams({ 
+                    name, 
+                    confirm, 
+                    number_guest, 
+                    dietary, 
+                    wish 
+                })
             })
                 .then(response => {
                     if (response.ok) {
